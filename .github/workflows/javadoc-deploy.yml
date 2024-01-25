@@ -19,6 +19,13 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up JDKs
+        uses: actions/setup-java@v4
+        with:
+          java-version: |
+            16
+            8
+          distribution: 'zulu'
       - name: Deploy javadoc to Github Pages
         uses: dev-vince/actions-publish-javadoc@v1.0.1
         with:
