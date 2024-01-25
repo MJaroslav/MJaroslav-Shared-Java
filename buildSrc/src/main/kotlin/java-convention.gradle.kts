@@ -1,3 +1,4 @@
+// TODO: Add gradle-lombok plugin for delomboked javadocs
 plugins {
     `java-library`
 }
@@ -33,6 +34,12 @@ tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
 
     javaCompiler = javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(16)
+    }
+}
+
+tasks.withType<Javadoc>().configureEach {
+    javadocTool = javaToolchains.javadocToolFor {
         languageVersion = JavaLanguageVersion.of(16)
     }
 }
