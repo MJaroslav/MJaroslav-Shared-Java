@@ -1,1 +1,1 @@
-rootProject.name = "MJaroslav-Shared-Java"
+rootProject.name = "Shared-Java"

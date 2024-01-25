@@ -1,4 +1,4 @@
-# MJaroslav-Shared-Java
+# MJaroslav's Shared Java
 
 Some of my shared java code (but NOT minecraft related).
 

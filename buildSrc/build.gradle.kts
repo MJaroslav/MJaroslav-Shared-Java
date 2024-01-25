@@ -4,6 +4,9 @@ plugins {
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
-dependencies {}
+dependencies {
+    implementation("io.franzbecker:gradle-lombok:5.0.0")
+}
