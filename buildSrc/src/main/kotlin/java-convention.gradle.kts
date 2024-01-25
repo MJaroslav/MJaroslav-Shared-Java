@@ -36,23 +36,21 @@ tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
 
     // Jabel compatibility
-    javaCompiler = javaToolchains.compilerFor {
-        languageVersion = JavaLanguageVersion.of(16)
-    }
+    javaCompiler = javaToolchains.compilerFor { languageVersion = JavaLanguageVersion.of(16) }
 }
 
 tasks {
     val delombok by registering(DelombokTask::class) {
         dependsOn(compileJava)
-        val outputDir by extra { file("${layout.buildDirectory}/delombok") }
+        // Jabel compatibility
+        javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(16) }
+        val outputDir by extra { layout.buildDirectory.dir("delombok").get().asFile }
         outputs.dir(outputDir)
         sourceSets["main"].java.srcDirs.forEach {
             inputs.dir(it)
             args(it, "-d", outputDir)
         }
-        doFirst {
-            outputDir.delete()
-        }
+        doFirst { outputDir.delete() }
     }
     javadoc {
         // Lombok compatibility
@@ -61,10 +59,12 @@ tasks {
         source = fileTree(outputDir)
         isFailOnError = false
         // Jabel compatibility
-        javadocTool = javaToolchains.javadocToolFor {
-            languageVersion = JavaLanguageVersion.of(16)
-        }
+        javadocTool = javaToolchains.javadocToolFor { languageVersion = JavaLanguageVersion.of(16) }
     }
+}
+
+tasks.withType<DelombokTask>().configureEach {
+    mainClass.set(lombok.main)
 }
 
 tasks.named<Test>("test") {
