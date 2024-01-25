@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- [PathFiles](src/main/java/io/github/mjaroslav/sharedjava/io/PathFiles.java) utility class.
+
 [unreleased]: https://github.com/MJaroslav/MJaroslav-Shared-Java/

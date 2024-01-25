@@ -1,0 +1,28 @@
+name: Deploy Java Docs to GH Pages
+
+on:
+  workflow_run:
+    workflows: [ 'Run gradle tests' ]
+    branches: [ master ]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: [ read, write ]
+
+concurrency:
+  group: ${{ github.event_name }}-${{ github.ref }}-javadoc
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy javadoc to Github Pages
+        uses: dev-vince/actions-publish-javadoc@v1.0.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          java-version: '8'
+          java-distribution: 'zulu'
+          project: gradle
