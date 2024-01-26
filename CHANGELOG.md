@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [PathFiles](src/main/java/io/github/mjaroslav/sharedjava/io/PathFiles.java) utility class.
 - [Colors](src/main/java/io/github/mjaroslav/sharedjava/format/Colors.java) utility class.
 - [Bits](src/main/java/io/github/mjaroslav/sharedjava/format/Bits.java) utility class.
-- [LazySupplier](src/main/java/io/github/mjaroslav/sharedjava/util/LazySupplier.java) realization
+- [LazySupplier](src/main/java/io/github/mjaroslav/sharedjava/function/LazySupplier.java) realization
   for `java.util.function.Supplier`.
 
-[unreleased]: https://github.com/MJaroslav/MJaroslav-Shared-Java/
+[unreleased]: https://github.com/MJaroslav/Shared-Java/

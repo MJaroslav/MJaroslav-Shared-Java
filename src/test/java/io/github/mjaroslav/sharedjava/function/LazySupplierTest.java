@@ -1,4 +1,4 @@
-package io.github.mjaroslav.sharedjava.util;
+package io.github.mjaroslav.sharedjava.function;
 
 import lombok.val;
 import org.junit.jupiter.api.Assertions;
