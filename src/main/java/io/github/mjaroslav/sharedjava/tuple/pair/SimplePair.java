@@ -1,5 +1,6 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
+import io.github.mjaroslav.sharedjava.tuple.Pair;
 import io.github.mjaroslav.sharedjava.tuple.unit.SimpleUnit;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

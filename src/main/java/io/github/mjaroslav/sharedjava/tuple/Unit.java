@@ -1,4 +1,4 @@
-package io.github.mjaroslav.sharedjava.tuple.unit;
+package io.github.mjaroslav.sharedjava.tuple;
 
 import lombok.val;
 

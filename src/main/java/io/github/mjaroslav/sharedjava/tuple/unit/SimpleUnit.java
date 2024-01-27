@@ -1,5 +1,6 @@
 package io.github.mjaroslav.sharedjava.tuple.unit;
 
+import io.github.mjaroslav.sharedjava.tuple.Unit;
 import lombok.*;
 import org.jetbrains.annotations.Nullable;
 

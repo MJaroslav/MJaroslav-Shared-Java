@@ -1,5 +1,6 @@
-package io.github.mjaroslav.sharedjava.tuple.trio;
+package io.github.mjaroslav.sharedjava.tuple.triplet;
 
+import io.github.mjaroslav.sharedjava.tuple.Triplet;
 import io.github.mjaroslav.sharedjava.tuple.pair.SimplePair;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,19 +12,19 @@ import java.util.Objects;
 @Getter
 @Setter
 @NoArgsConstructor
-public class SimpleTrio<X, Y, Z> extends SimplePair<X, Y> implements Trio<X, Y, Z> {
+public class SimpleTriplet<X, Y, Z> extends SimplePair<X, Y> implements Triplet<X, Y, Z> {
     protected Z z;
 
-    public SimpleTrio(X x, Y y, Z z) {
+    public SimpleTriplet(X x, Y y, Z z) {
         super(x, y);
         setZ(z);
     }
 
     @Override
     public boolean equals(@Nullable Object obj) {
-        return obj instanceof Trio<?, ?, ?> trio ?
-            Objects.equals(getX(), trio.getX()) && Objects.equals(getY(), trio.getY()) &&
-                Objects.equals(getZ(), trio.getZ()) : super.equals(obj);
+        return obj instanceof Triplet<?, ?, ?> triplet ?
+            Objects.equals(getX(), triplet.getX()) && Objects.equals(getY(), triplet.getY()) &&
+                Objects.equals(getZ(), triplet.getZ()) : super.equals(obj);
     }
 
     @Override

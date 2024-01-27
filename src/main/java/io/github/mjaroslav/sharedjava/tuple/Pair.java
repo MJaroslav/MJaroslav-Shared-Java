@@ -1,6 +1,5 @@
-package io.github.mjaroslav.sharedjava.tuple.pair;
+package io.github.mjaroslav.sharedjava.tuple;
 
-import io.github.mjaroslav.sharedjava.tuple.unit.Unit;
 import lombok.val;
 
 public interface Pair<X, Y> extends Unit<X> {

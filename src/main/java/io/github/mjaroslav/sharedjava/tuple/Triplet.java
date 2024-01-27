@@ -1,9 +1,8 @@
-package io.github.mjaroslav.sharedjava.tuple.trio;
+package io.github.mjaroslav.sharedjava.tuple;
 
-import io.github.mjaroslav.sharedjava.tuple.pair.Pair;
 import lombok.val;
 
-public interface Trio<X, Y, Z> extends Pair<X, Y> {
+public interface Triplet<X, Y, Z> extends Pair<X, Y> {
     Z getZ();
 
     void setZ(Z z);

@@ -1,5 +1,6 @@
 package io.github.mjaroslav.sharedjava.tuple.unit;
 
+import io.github.mjaroslav.sharedjava.tuple.Unit;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,28 +19,28 @@ import java.util.function.ToIntFunction;
 public class DelegatingUnit<X> implements Unit<X> {
     protected X x;
 
-    protected @Nullable Function<X, String> toStringFunc;
-    protected @Nullable ToIntFunction<X> hashCodeFunc;
-    protected @Nullable BiPredicate<X, Object> equalsFunc;
+    protected @Nullable Function<Unit<X>, String> toStringFunc;
+    protected @Nullable ToIntFunction<Unit<X>> hashCodeFunc;
+    protected @Nullable BiPredicate<Unit<X>, Object> equalsFunc;
 
     public DelegatingUnit(X x) {
         setX(x);
     }
 
     @Contract("_ -> this")
-    public DelegatingUnit<X> setToStringFunc(@Nullable Function<X, String> toStringFunc) {
+    public DelegatingUnit<X> setToStringFunc(@Nullable Function<Unit<X>, String> toStringFunc) {
         this.toStringFunc = toStringFunc;
         return this;
     }
 
     @Contract("_ -> this")
-    public DelegatingUnit<X> setHashCodeFunc(@Nullable ToIntFunction<X> hashCodeFunc) {
+    public DelegatingUnit<X> setHashCodeFunc(@Nullable ToIntFunction<Unit<X>> hashCodeFunc) {
         this.hashCodeFunc = hashCodeFunc;
         return this;
     }
 
     @Contract("_ -> this")
-    public DelegatingUnit<X> setEqualsFunc(@Nullable BiPredicate<X, Object> equalsFunc) {
+    public DelegatingUnit<X> setEqualsFunc(@Nullable BiPredicate<Unit<X>, Object> equalsFunc) {
         this.equalsFunc = equalsFunc;
         return this;
     }
@@ -47,18 +48,18 @@ public class DelegatingUnit<X> implements Unit<X> {
     @Override
     public boolean equals(@Nullable Object obj) {
         val func = getEqualsFunc();
-        return func != null && func.test(getX(), obj) || Objects.equals(getX(), obj instanceof Unit<?> unit ? unit.getX() : obj);
+        return func != null && func.test(this, obj) || Objects.equals(getX(), obj instanceof Unit<?> unit ? unit.getX() : obj);
     }
 
     @Override
     public int hashCode() {
         val func = getHashCodeFunc();
-        return func != null ? func.applyAsInt(getX()) : Objects.hashCode(getX());
+        return func != null ? func.applyAsInt(this) : Objects.hashCode(getX());
     }
 
     @Override
     public String toString() {
         val func = getToStringFunc();
-        return this.getClass().getSimpleName() + "(" + (func != null ? func.apply(getX()) : valueToString()) + ")";
+        return this.getClass().getSimpleName() + "(" + (func != null ? func.apply(this) : valueToString()) + ")";
     }
 }
