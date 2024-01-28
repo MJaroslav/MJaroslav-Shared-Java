@@ -4,4 +4,5 @@ object Versions {
     const val JABEL = "1.0.0"
     const val JUNIT_JUPITER = "5.10.1"
     const val JUNIT_PLATFORM = "1.10.1"
+    const val EQUALS_VERIFIER = "3.15.6"
 }

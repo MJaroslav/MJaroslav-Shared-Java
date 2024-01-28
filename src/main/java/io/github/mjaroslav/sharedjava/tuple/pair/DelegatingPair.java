@@ -1,9 +1,8 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
 import io.github.mjaroslav.sharedjava.tuple.Pair;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.val;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
@@ -13,10 +12,8 @@ import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
-@Getter
-@Setter
 @NoArgsConstructor
-public class DelegatingPair<X, Y> implements Pair<X, Y> {
+public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
     protected X x;
     protected Y y;
 
@@ -49,19 +46,13 @@ public class DelegatingPair<X, Y> implements Pair<X, Y> {
     @Override
     public boolean equals(@Nullable Object obj) {
         val func = getEqualsFunc();
-        return func != null ? func.test(this, obj) :
-            obj instanceof Pair<?, ?> pair && Objects.equals(getX(), pair.getX()) && Objects.equals(getY(), pair.getY());
+        return func != null ? func.test(this, obj) : this == obj || obj instanceof Pair<?, ?> pair &&
+            Objects.equals(getX(), pair.getX()) && Objects.equals(getY(), pair.getY());
     }
 
     @Override
     public int hashCode() {
         val func = getHashCodeFunc();
         return func != null ? func.applyAsInt(this) : Objects.hash(getX(), getY());
-    }
-
-    @Override
-    public String toString() {
-        val func = getToStringFunc();
-        return this.getClass().getSimpleName() + "(" + (func != null ? func.apply(this) : valueToString()) + ")";
     }
 }

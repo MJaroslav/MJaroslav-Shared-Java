@@ -23,6 +23,9 @@ dependencies {
 
     testImplementation(Dependencies.JUNIT_JUPITER)
     testRuntimeOnly(Dependencies.JUNIT_PLATFORM)
+
+    testImplementation(Dependencies.EQUALS_VERIFIER)
+    testRuntimeOnly(Dependencies.EQUALS_VERIFIER)
 }
 
 java {

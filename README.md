@@ -11,7 +11,6 @@ Some of my shared java code (but NOT minecraft related).
 [![JitCI status](https://jitci.com/gh/MJaroslav/Shared-Java/svg)](https://jitci.com/gh/MJaroslav/Shared-Java "JitCI")
 ![GitHub CI test status](https://github.com/MJaroslav/Shared-Java/actions/workflows/ci-test.yml/badge.svg)
 
-
 ---
 
-**Work in progress**, you can see it in [CHANGELOG.md](CHANGELOG.md).
+**Work in progress**, you can see it in [CHANGELOG.md](CHANGELOG.md) and [TODO.md](TODO.md).
