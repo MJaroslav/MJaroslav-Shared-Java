@@ -8,11 +8,23 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
+/**
+ * Simple implementation of {@link Unit}, contains: equals, hashCode and toString functionality.
+ * Can contain null values and sets it by default constructor.
+ *
+ * @param <X> type of x (first) value
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 public @Data class SimpleUnit<X> implements Unit<X> {
+    /**
+     * x (first) value, use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected X x;
-
 
     @Override
     public boolean equals(@Nullable Object obj) {

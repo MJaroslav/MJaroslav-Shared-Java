@@ -7,10 +7,35 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
+/**
+ * Simple implementation of {@link Triplet}, contains: equals, hashCode and toString functionality.
+ * Can contain null values and sets it by default constructor.
+ *
+ * @param <X> type of x (first) value
+ * @param <Y> type of y (second) value
+ * @param <Z> type of z (third) value
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 @NoArgsConstructor
 public @Data class SimpleTriplet<X, Y, Z> implements Triplet<X, Y, Z> {
+    /**
+     * x (first) value, use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected X x;
+    /**
+     * y (second) value, use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected Y y;
+    /**
+     * z (third) value, use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected Z z;
 
     public SimpleTriplet(X x, Y y, Z z) {

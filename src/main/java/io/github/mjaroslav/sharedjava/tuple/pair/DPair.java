@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
+import io.github.mjaroslav.sharedjava.tuple.Pair;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Pair} for Double values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with 0D.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class DPair extends SimplePair<Double, Double> {
     public DPair() {
         super(0D, 0D);

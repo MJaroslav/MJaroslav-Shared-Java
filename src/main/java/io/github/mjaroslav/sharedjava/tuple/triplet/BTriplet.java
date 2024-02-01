@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
+import io.github.mjaroslav.sharedjava.tuple.Triplet;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Triplet} for Byte values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with (byte) 0.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class BTriplet extends SimpleTriplet<Byte, Byte, Byte> {
     public BTriplet() {
         super((byte) 0, (byte) 0, (byte) 0);

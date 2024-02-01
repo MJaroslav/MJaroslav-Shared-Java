@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.unit;
 
+import io.github.mjaroslav.sharedjava.tuple.Unit;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Unit} for Long values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with 0L.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class LUnit extends SimpleUnit<Long> {
     public LUnit() {
         super(0L);

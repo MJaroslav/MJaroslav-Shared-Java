@@ -12,18 +12,56 @@ import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
+/**
+ * Implementation of {@link Unit}, allows you delegating hashCode, equals and toString by functions.
+ * Can contain null values and sets it by default constructor.
+ *
+ * @param <X> type of x (first) value
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 @NoArgsConstructor
 public @Data class DelegatingUnit<X> implements Unit<X> {
+    /**
+     * x (first) value, use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected X x;
 
+    /**
+     * Delegating function for toString; Will use default behavior if null.
+     * Use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected @Nullable Function<Unit<X>, String> toStringFunc;
+    /**
+     * Delegating function for hashCode; Will use default behavior if null.
+     * Use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected @Nullable ToIntFunction<Unit<X>> hashCodeFunc;
+    /**
+     * Delegating function for equals; Will use default behavior if null.
+     * Use setter and getter for it.
+     *
+     * @since 0.1.0
+     */
     protected @Nullable BiPredicate<Unit<X>, Object> equalsFunc;
 
     public DelegatingUnit(X x) {
         setX(x);
     }
 
+    /**
+     * Sets or remove (null value) toString delegating function.
+     *
+     * @param toStringFunc function for toString delegating; use null for default behavior
+     * @return this Unit object
+     * @since 0.1.0
+     */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingUnit<X> setToStringFunc(@Nullable Function<Unit<X>, String> toStringFunc) {
@@ -31,6 +69,13 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
         return this;
     }
 
+    /**
+     * Sets or remove (null value) hashCode delegating function.
+     *
+     * @param hashCodeFunc function for hashCode delegating; use null for default behavior
+     * @return this Unit object
+     * @since 0.1.0
+     */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingUnit<X> setHashCodeFunc(@Nullable ToIntFunction<Unit<X>> hashCodeFunc) {
@@ -38,6 +83,13 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
         return this;
     }
 
+    /**
+     * Sets or remove (null value) equals delegating function.
+     *
+     * @param equalsFunc function for equals delegating; use null for default behavior
+     * @return this Unit object
+     * @since 0.1.0
+     */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingUnit<X> setEqualsFunc(@Nullable BiPredicate<Unit<X>, Object> equalsFunc) {

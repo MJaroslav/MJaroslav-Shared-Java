@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
+import io.github.mjaroslav.sharedjava.tuple.Triplet;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Triplet} for Integer values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with 0.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class ITriplet extends SimpleTriplet<Integer, Integer, Integer> {
     public ITriplet() {
         super(0, 0, 0);

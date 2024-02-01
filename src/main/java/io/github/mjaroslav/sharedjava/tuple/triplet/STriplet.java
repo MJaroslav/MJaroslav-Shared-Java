@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
+import io.github.mjaroslav.sharedjava.tuple.Triplet;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Triplet} for Short values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with (short) 0.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class STriplet extends SimpleTriplet<Short, Short, Short> {
     public STriplet() {
         super((short) 0, (short) 0, (short) 0);

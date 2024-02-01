@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
+import io.github.mjaroslav.sharedjava.tuple.Triplet;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Triplet} for Float values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with 0F.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class FTriplet extends SimpleTriplet<Float, Float, Float> {
     public FTriplet() {
         super(0F, 0F, 0F);

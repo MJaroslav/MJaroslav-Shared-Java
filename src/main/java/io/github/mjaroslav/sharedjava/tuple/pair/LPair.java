@@ -1,8 +1,16 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
+import io.github.mjaroslav.sharedjava.tuple.Pair;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Simple implementation of {@link Pair} for Long values, contains: equals, hashCode and toString functionality.
+ * Null values will be replaced with 0L.
+ *
+ * @author MJaroslav
+ * @since 0.1.0
+ */
 public class LPair extends SimplePair<Long, Long> {
     public LPair() {
         super(0L, 0L);
