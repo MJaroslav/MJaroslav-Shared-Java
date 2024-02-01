@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.unit;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class BUnit extends SimpleUnit<Byte> {
     public BUnit() {
@@ -11,12 +12,12 @@ public class BUnit extends SimpleUnit<Byte> {
         super(x);
     }
 
-    public byte x() {
-        val x = getX();
+    @Override
+    public @NotNull Byte getX() {
+        val x = super.getX();
         if (x == null) {
             setX((byte) 0);
             return (byte) 0;
-        }
-        return x;
+        } else return x;
     }
 }

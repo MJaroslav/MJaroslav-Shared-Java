@@ -24,18 +24,21 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
         setX(x);
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingUnit<X> setToStringFunc(@Nullable Function<Unit<X>, String> toStringFunc) {
         this.toStringFunc = toStringFunc;
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingUnit<X> setHashCodeFunc(@Nullable ToIntFunction<Unit<X>> hashCodeFunc) {
         this.hashCodeFunc = hashCodeFunc;
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingUnit<X> setEqualsFunc(@Nullable BiPredicate<Unit<X>, Object> equalsFunc) {
         this.equalsFunc = equalsFunc;
@@ -53,5 +56,11 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
     public int hashCode() {
         val func = getHashCodeFunc();
         return func != null ? func.applyAsInt(this) : Objects.hash(getX());
+    }
+
+    @Override
+    public String toString() {
+        val func = getToStringFunc();
+        return func != null ? func.apply(this) : "DelegatingUnit(x=" + this.getX() + ")";
     }
 }

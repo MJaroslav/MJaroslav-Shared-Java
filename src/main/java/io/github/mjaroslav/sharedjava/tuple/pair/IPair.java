@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class IPair extends SimplePair<Integer, Integer> {
     public IPair() {
@@ -11,21 +12,21 @@ public class IPair extends SimplePair<Integer, Integer> {
         super(x, y);
     }
 
-    public int x() {
-        val x = getX();
+    @Override
+    public @NotNull Integer getX() {
+        val x = super.getX();
         if (x == null) {
             setX(0);
             return 0;
-        }
-        return x;
+        } else return x;
     }
 
-    public int y() {
-        val y = getY();
+    @Override
+    public @NotNull Integer getY() {
+        val y = super.getY();
         if (y == null) {
             setY(0);
             return 0;
-        }
-        return y;
+        } else return y;
     }
 }

@@ -26,18 +26,21 @@ public @Data class DelegatingTriplet<X, Y, Z> implements Triplet<X, Y, Z> {
         set(x, y, z);
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingTriplet<X, Y, Z> setToStringFunc(@Nullable Function<Triplet<X, Y, Z>, String> toStringFunc) {
         this.toStringFunc = toStringFunc;
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingTriplet<X, Y, Z> setHashCodeFunc(@Nullable ToIntFunction<Triplet<X, Y, Z>> hashCodeFunc) {
         this.hashCodeFunc = hashCodeFunc;
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingTriplet<X, Y, Z> setEqualsFunc(@Nullable BiPredicate<Triplet<X, Y, Z>, Object> equalsFunc) {
         this.equalsFunc = equalsFunc;
@@ -56,5 +59,11 @@ public @Data class DelegatingTriplet<X, Y, Z> implements Triplet<X, Y, Z> {
     public int hashCode() {
         val func = getHashCodeFunc();
         return func != null ? func.applyAsInt(this) : Objects.hash(getX(), getY(), getZ());
+    }
+
+    @Override
+    public String toString() {
+        val func = getToStringFunc();
+        return func != null ? func.apply(this) : "DelegatingTriplet(x=" + this.getX() + ", y=" + this.getY() + ", z=" + this.getZ() + ")";
     }
 }

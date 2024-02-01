@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class BTriplet extends SimpleTriplet<Byte, Byte, Byte> {
     public BTriplet() {
@@ -11,30 +12,30 @@ public class BTriplet extends SimpleTriplet<Byte, Byte, Byte> {
         super(x, y, z);
     }
 
-    public byte x() {
-        val x = getX();
+    @Override
+    public @NotNull Byte getX() {
+        val x = super.getX();
         if (x == null) {
             setX((byte) 0);
             return (byte) 0;
-        }
-        return x;
+        } else return x;
     }
 
-    public byte y() {
-        val y = getY();
+    @Override
+    public @NotNull Byte getY() {
+        val y = super.getY();
         if (y == null) {
             setY((byte) 0);
             return (byte) 0;
-        }
-        return y;
+        } else return y;
     }
 
-    public byte z() {
-        val z = getZ();
+    @Override
+    public @NotNull Byte getZ() {
+        val z = super.getZ();
         if (z == null) {
             setZ((byte) 0);
             return (byte) 0;
-        }
-        return z;
+        } else return z;
     }
 }

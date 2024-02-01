@@ -1,8 +1,9 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
-public class LTriplet  extends SimpleTriplet<Long, Long, Long> {
+public class LTriplet extends SimpleTriplet<Long, Long, Long> {
     public LTriplet() {
         super(0L, 0L, 0L);
     }
@@ -11,30 +12,30 @@ public class LTriplet  extends SimpleTriplet<Long, Long, Long> {
         super(x, y, z);
     }
 
-    public long x() {
-        val x = getX();
+    @Override
+    public @NotNull Long getX() {
+        val x = super.getX();
         if (x == null) {
             setX(0L);
             return 0L;
-        }
-        return x;
+        } else return x;
     }
 
-    public long y() {
-        val y = getY();
+    @Override
+    public @NotNull Long getY() {
+        val y = super.getY();
         if (y == null) {
             setY(0L);
             return 0L;
-        }
-        return y;
+        } else return y;
     }
 
-    public long z() {
-        val z = getZ();
+    @Override
+    public @NotNull Long getZ() {
+        val z = super.getZ();
         if (z == null) {
             setZ(0L);
             return 0L;
-        }
-        return z;
+        } else return z;
     }
 }

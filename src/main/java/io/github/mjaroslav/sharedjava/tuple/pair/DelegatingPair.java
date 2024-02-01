@@ -25,18 +25,21 @@ public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
         set(x, y);
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingPair<X, Y> setToStringFunc(@Nullable Function<Pair<X, Y>, String> toStringFunc) {
         this.toStringFunc = toStringFunc;
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingPair<X, Y> setHashCodeFunc(@Nullable ToIntFunction<Pair<X, Y>> hashCodeFunc) {
         this.hashCodeFunc = hashCodeFunc;
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
     public DelegatingPair<X, Y> setEqualsFunc(@Nullable BiPredicate<Pair<X, Y>, Object> equalsFunc) {
         this.equalsFunc = equalsFunc;
@@ -54,5 +57,11 @@ public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
     public int hashCode() {
         val func = getHashCodeFunc();
         return func != null ? func.applyAsInt(this) : Objects.hash(getX(), getY());
+    }
+
+    @Override
+    public String toString() {
+        val func = getToStringFunc();
+        return func != null ? func.apply(this) : "DelegatingPair(x=" + this.getX() + ", y=" + this.getY() + ")";
     }
 }

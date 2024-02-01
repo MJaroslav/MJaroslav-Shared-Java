@@ -1,72 +1,54 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
+import io.github.mjaroslav.sharedjava.tuple.TupleShared;
 import lombok.val;
 import nl.jqno.equalsverifier.EqualsVerifier;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class SimpleTripletTest {
     @Test
     void getX() {
         val expected = 1;
-        var unit = new SimpleTriplet<>(expected, null, null);
-        var actual = unit.getX();
-        Assertions.assertEquals(expected, actual, "Not null value not match");
-        unit = new SimpleTriplet<>();
-        actual = unit.getX();
-        Assertions.assertNull(actual, "Null value not null");
+        val notNullValueTriplet = new SimpleTriplet<>(expected, null, null);
+        val nullValueTriplet = new SimpleTriplet<Integer, Object, Object>();
+        TupleShared.testGetX(notNullValueTriplet, nullValueTriplet, expected);
     }
 
     @Test
     void getY() {
         val expected = 1;
-        var unit = new SimpleTriplet<>(null, expected, null);
-        var actual = unit.getY();
-        Assertions.assertEquals(expected, actual, "Not null value not match");
-        unit = new SimpleTriplet<>();
-        actual = unit.getY();
-        Assertions.assertNull(actual, "Null value not null");
+        val notNullValueTriplet = new SimpleTriplet<>(null, expected, null);
+        val nullValueTriplet = new SimpleTriplet<Object, Integer, Object>();
+        TupleShared.testGetY(notNullValueTriplet, nullValueTriplet, expected);
     }
 
     @Test
     void getZ() {
         val expected = 1;
-        var unit = new SimpleTriplet<>(null, null, expected);
-        var actual = unit.getZ();
-        Assertions.assertEquals(expected, actual, "Not null value not match");
-        unit = new SimpleTriplet<>();
-        actual = unit.getZ();
-        Assertions.assertNull(actual, "Null value not null");
+        val notNullValueTriplet = new SimpleTriplet<>(null, null, expected);
+        val nullValueTriplet = new SimpleTriplet<Object, Object, Integer>();
+        TupleShared.testGetZ(notNullValueTriplet, nullValueTriplet, expected);
     }
 
     @Test
     void setX() {
-        val unit = new SimpleTriplet<Boolean, Object, Object>();
-        var actual = unit.getX();
-        Assertions.assertNull(actual, "Null value not null");
-        unit.setX(true);
-        actual = unit.getX();
-        Assertions.assertTrue(actual, "Not null value not match");
+        val expected = true;
+        val nullValueTriplet = new SimpleTriplet<Boolean, Object, Object>();
+        TupleShared.testSetX(nullValueTriplet, expected);
     }
 
     @Test
     void setY() {
-        val unit = new SimpleTriplet<Object, Boolean, Object>();
-        var actual = unit.getY();
-        Assertions.assertNull(actual, "Null value not null");
-        unit.setY(true);
-        actual = unit.getY();
-        Assertions.assertTrue(actual, "Not null value not match");
+        val expected = true;
+        val nullValueTriplet = new SimpleTriplet<Object, Boolean, Object>();
+        TupleShared.testSetY(nullValueTriplet, expected);
     }
 
     @Test
     void setZ() {
-        val unit = new SimpleTriplet<Object, Object, Boolean>();
-        var actual = unit.getZ();
-        Assertions.assertNull(actual, "Null value not null");
-        unit.setZ(true);
-        actual = unit.getZ();
-        Assertions.assertTrue(actual, "Not null value not match");
+        val expected = true;
+        val nullValueTriplet = new SimpleTriplet<Object, Object, Boolean>();
+        TupleShared.testSetZ(nullValueTriplet, expected);
     }
 
     @Test

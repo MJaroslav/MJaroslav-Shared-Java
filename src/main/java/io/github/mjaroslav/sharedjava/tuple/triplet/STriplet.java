@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class STriplet extends SimpleTriplet<Short, Short, Short> {
     public STriplet() {
@@ -11,30 +12,30 @@ public class STriplet extends SimpleTriplet<Short, Short, Short> {
         super(x, y, z);
     }
 
-    public short x() {
-        val x = getX();
+    @Override
+    public @NotNull Short getX() {
+        val x = super.getX();
         if (x == null) {
             setX((short) 0);
             return (short) 0;
-        }
-        return x;
+        } else return x;
     }
 
-    public short y() {
-        val y = getY();
+    @Override
+    public @NotNull Short getY() {
+        val y = super.getY();
         if (y == null) {
             setY((short) 0);
             return (short) 0;
-        }
-        return y;
+        } else return y;
     }
 
-    public short z() {
-        val z = getZ();
+    @Override
+    public @NotNull Short getZ() {
+        val z = super.getZ();
         if (z == null) {
             setZ((short) 0);
             return (short) 0;
-        }
-        return z;
+        } else return z;
     }
 }

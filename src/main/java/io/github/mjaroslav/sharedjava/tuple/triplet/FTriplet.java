@@ -1,8 +1,9 @@
 package io.github.mjaroslav.sharedjava.tuple.triplet;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
-public class FTriplet  extends SimpleTriplet<Float, Float, Float> {
+public class FTriplet extends SimpleTriplet<Float, Float, Float> {
     public FTriplet() {
         super(0F, 0F, 0F);
     }
@@ -11,30 +12,30 @@ public class FTriplet  extends SimpleTriplet<Float, Float, Float> {
         super(x, y, z);
     }
 
-    public float x() {
-        val x = getX();
+    @Override
+    public @NotNull Float getX() {
+        val x = super.getX();
         if (x == null) {
             setX(0F);
             return 0F;
-        }
-        return x;
+        } else return x;
     }
 
-    public float y() {
-        val y = getY();
+    @Override
+    public @NotNull Float getY() {
+        val y = super.getY();
         if (y == null) {
             setY(0F);
             return 0F;
-        }
-        return y;
+        } else return y;
     }
 
-    public float z() {
-        val z = getZ();
+    @Override
+    public @NotNull Float getZ() {
+        val z = super.getZ();
         if (z == null) {
             setZ(0F);
             return 0F;
-        }
-        return z;
+        } else return z;
     }
 }

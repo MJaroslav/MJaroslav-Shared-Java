@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class FPair extends SimplePair<Float, Float> {
     public FPair() {
@@ -11,21 +12,21 @@ public class FPair extends SimplePair<Float, Float> {
         super(x, y);
     }
 
-    public float x() {
-        val x = getX();
+    @Override
+    public @NotNull Float getX() {
+        val x = super.getX();
         if (x == null) {
             setX(0F);
             return 0F;
-        }
-        return x;
+        } else return x;
     }
 
-    public float y() {
-        val y = getY();
+    @Override
+    public @NotNull Float getY() {
+        val y = super.getY();
         if (y == null) {
             setY(0F);
             return 0F;
-        }
-        return y;
+        } else return y;
     }
 }

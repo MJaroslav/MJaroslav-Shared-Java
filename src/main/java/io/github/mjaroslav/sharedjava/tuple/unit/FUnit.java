@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.unit;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class FUnit extends SimpleUnit<Float> {
     public FUnit() {
@@ -11,12 +12,12 @@ public class FUnit extends SimpleUnit<Float> {
         super(x);
     }
 
-    public float x() {
-        val x = getX();
+    @Override
+    public @NotNull Float getX() {
+        val x = super.getX();
         if (x == null) {
             setX(0F);
             return 0F;
-        }
-        return x;
+        } else return x;
     }
 }

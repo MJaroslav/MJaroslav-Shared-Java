@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.pair;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class BPair extends SimplePair<Byte, Byte> {
     public BPair() {
@@ -11,21 +12,21 @@ public class BPair extends SimplePair<Byte, Byte> {
         super(x, y);
     }
 
-    public byte x() {
-        val x = getX();
+    @Override
+    public @NotNull Byte getX() {
+        val x = super.getX();
         if (x == null) {
             setX((byte) 0);
             return (byte) 0;
-        }
-        return x;
+        } else return x;
     }
 
-    public byte y() {
-        val y = getY();
+    @Override
+    public @NotNull Byte getY() {
+        val y = super.getY();
         if (y == null) {
             setY((byte) 0);
             return (byte) 0;
-        }
-        return y;
+        } else return y;
     }
 }

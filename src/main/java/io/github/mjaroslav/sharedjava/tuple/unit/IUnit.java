@@ -1,6 +1,7 @@
 package io.github.mjaroslav.sharedjava.tuple.unit;
 
 import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class IUnit extends SimpleUnit<Integer> {
     public IUnit() {
@@ -11,12 +12,12 @@ public class IUnit extends SimpleUnit<Integer> {
         super(x);
     }
 
-    public int x() {
-        val x = getX();
+    @Override
+    public @NotNull Integer getX() {
+        val x = super.getX();
         if (x == null) {
             setX(0);
             return 0;
-        }
-        return x;
+        } else return x;
     }
 }
