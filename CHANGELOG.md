@@ -28,5 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
       (e.g. [DelegatingUnit](src/main/java/io/github/mjaroslav/sharedjava/tuple/unit/DelegatingUnit.java)).
 - [ReflectionHelper](src/main/java/io/github/mjaroslav/sharedjava/reflect/ReflectionHelper.java) with some hacky
   reflection utils.
+- [DelegatingSet](src/main/java/io/github/mjaroslav/sharedjava/util/DelegatingSet.java) for delegating equals and
+  hashCode.
+- [DelegatingMap](src/main/java/io/github/mjaroslav/sharedjava/util/DelegatingMap.java) for delegating equals and
+  hashCode.
 
 [unreleased]: https://github.com/MJaroslav/Shared-Java/
