@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -173,14 +172,8 @@ public class LazySupplier<T> implements Supplier<T> {
     }
 
     @Override
-    public int hashCode() {
-        initialize();
-        return Objects.hashCode(value);
-    }
-
-    @Override
     public String toString() {
         initialize();
-        return value != null ? String.format("Lazy[%s]", value) : "Lazy.empty";
+        return value != null ? String.format("LazySupplier[%s]", value) : "LazySupplier.empty";
     }
 }

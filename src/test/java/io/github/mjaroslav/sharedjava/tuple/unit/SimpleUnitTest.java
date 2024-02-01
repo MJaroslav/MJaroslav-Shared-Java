@@ -3,6 +3,7 @@ package io.github.mjaroslav.sharedjava.tuple.unit;
 import io.github.mjaroslav.sharedjava.tuple.TupleShared;
 import lombok.val;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class SimpleUnitTest {
@@ -24,5 +25,13 @@ class SimpleUnitTest {
     @Test
     void equalsAndHashCode() {
         EqualsVerifier.simple().forClass(SimpleUnit.class).verify();
+    }
+
+    @Test
+    void testToString() {
+        val unit = new SimpleUnit<>(1);
+        val expected = "SimpleUnit(x=1)";
+        val actual = unit.toString();
+        Assertions.assertEquals(expected, actual, "String not match");
     }
 }

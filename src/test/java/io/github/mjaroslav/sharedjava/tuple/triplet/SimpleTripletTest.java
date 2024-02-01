@@ -3,6 +3,7 @@ package io.github.mjaroslav.sharedjava.tuple.triplet;
 import io.github.mjaroslav.sharedjava.tuple.TupleShared;
 import lombok.val;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class SimpleTripletTest {
@@ -54,5 +55,13 @@ class SimpleTripletTest {
     @Test
     void equalsAndHashCode() {
         EqualsVerifier.simple().forClass(SimpleTriplet.class).verify();
+    }
+
+    @Test
+    void testToString() {
+        val triplet = new SimpleTriplet<>(1, 0, -1);
+        val expected = "SimpleTriplet(x=1, y=0, z=-1)";
+        val actual = triplet.toString();
+        Assertions.assertEquals(expected, actual, "String not match");
     }
 }

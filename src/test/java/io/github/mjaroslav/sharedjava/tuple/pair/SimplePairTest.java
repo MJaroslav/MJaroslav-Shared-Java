@@ -3,6 +3,7 @@ package io.github.mjaroslav.sharedjava.tuple.pair;
 import io.github.mjaroslav.sharedjava.tuple.TupleShared;
 import lombok.val;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class SimplePairTest {
@@ -39,5 +40,13 @@ class SimplePairTest {
     @Test
     void equalsAndHashCode() {
         EqualsVerifier.simple().forClass(SimplePair.class).verify();
+    }
+
+    @Test
+    void testToString() {
+        val pair = new SimplePair<>(1, -1);
+        val expected = "SimplePair(x=1, y=-1)";
+        val actual = pair.toString();
+        Assertions.assertEquals(expected, actual, "String not match");
     }
 }

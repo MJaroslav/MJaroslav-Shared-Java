@@ -151,4 +151,16 @@ class LazySupplierTest {
         supplier.initialize();
         Assertions.assertTrue(supplier.isInitialized(), "Not initialized after calling null-value initialize");
     }
+
+    @Test
+    void testToString() {
+        var lazy = new LazySupplier<String>(() -> null);
+        var expected = "LazySupplier.empty";
+        var actual = lazy.toString();
+        Assertions.assertEquals(expected, actual, "Null value");
+        expected = "LazySupplier[test]";
+        lazy = new LazySupplier<>(() -> "test");
+        actual = lazy.toString();
+        Assertions.assertEquals(expected, actual, "Value");
+    }
 }

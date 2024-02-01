@@ -26,5 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
       changing
       `toString`, `hashCode` and `equals` methods by functions
       (e.g. [DelegatingUnit](src/main/java/io/github/mjaroslav/sharedjava/tuple/unit/DelegatingUnit.java)).
+- [ReflectionHelper](src/main/java/io/github/mjaroslav/sharedjava/reflect/ReflectionHelper.java) with some hacky
+  reflection utils.
 
 [unreleased]: https://github.com/MJaroslav/Shared-Java/
