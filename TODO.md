@@ -13,4 +13,4 @@ It's reminder for planned things of project.
 
 - [X] Fully cover tuples by tests.
 - [X] Write javadoc for tuples.
-- [ ] Write javadoc for ReflectionHelper.
+- [X] Write javadoc for ReflectionHelper.

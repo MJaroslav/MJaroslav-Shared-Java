@@ -51,6 +51,8 @@ class ReflectionHelperTest {
         Assertions.assertEquals(expected, actual, "Package by object not match");
         actual = ReflectionHelper.getPackage(EnumDummy.class.getName());
         Assertions.assertEquals(expected, actual, "Package by string not match");
+        actual = ReflectionHelper.getPackage(expected);
+        Assertions.assertEquals(expected, actual, "Package string not match");
     }
 
     @Test
