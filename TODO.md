@@ -7,7 +7,7 @@ It's reminder for planned things of project.
 ### Features
 
 - [X] Delegating versions of collections (just copy-paste from MJUtils repository).
-- [ ] JFX like Properties (just copy-paste from IHateGUI repository).
+- [X] JFX like Properties (just copy-paste from IHateGUI repository).
 
 ### Internal
 
@@ -15,3 +15,4 @@ It's reminder for planned things of project.
 - [X] Write javadoc for tuples.
 - [X] Write javadoc for ReflectionHelper.
 - [ ] Write javadoc for Delegating Collections.
+- [ ] Write javadoc for Property

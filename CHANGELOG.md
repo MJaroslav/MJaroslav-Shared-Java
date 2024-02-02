@@ -32,5 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   hashCode.
 - [DelegatingMap](src/main/java/io/github/mjaroslav/sharedjava/util/DelegatingMap.java) for delegating equals and
   hashCode.
+- [Property](src/main/java/io/github/mjaroslav/sharedjava/util/Property.java) JFX-like Property.
 
 [unreleased]: https://github.com/MJaroslav/Shared-Java/
