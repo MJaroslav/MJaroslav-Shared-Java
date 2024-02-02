@@ -4,6 +4,8 @@ It's reminder for planned things of project.
 
 ## Next release
 
+## 1.0.0
+
 ### Features
 
 - [X] Delegating versions of collections (just copy-paste from MJUtils repository).

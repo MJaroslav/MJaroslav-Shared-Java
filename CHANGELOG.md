@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2024-02-02
+
 ### Added
 
 - [PathFiles](src/main/java/io/github/mjaroslav/sharedjava/io/PathFiles.java) utility class.
@@ -34,4 +36,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   hashCode.
 - [Property](src/main/java/io/github/mjaroslav/sharedjava/util/Property.java) JFX-like Property.
 
-[unreleased]: https://github.com/MJaroslav/Shared-Java/
+[unreleased]: https://github.com/MJaroslav/Shared-Java/compare/v1.3.0...HEAD
+[1.0.0]: https://github.com/MJaroslav/Shared-Java/releases/tag/1.0.0

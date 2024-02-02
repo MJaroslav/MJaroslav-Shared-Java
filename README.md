@@ -11,6 +11,42 @@ Some of my shared java code (but NOT minecraft related).
 [![JitCI status](https://jitci.com/gh/MJaroslav/Shared-Java/svg)](https://jitci.com/gh/MJaroslav/Shared-Java "JitCI")
 ![GitHub CI test status](https://github.com/MJaroslav/Shared-Java/actions/workflows/ci-test.yml/badge.svg)
 
----
+## Usage
 
-**Work in progress**, you can see it in [CHANGELOG.md](CHANGELOG.md) and [TODO.md](TODO.md).
+Complete your build script with this:
+
+```groovy
+repositories {
+    maven {
+        name 'JitPack'
+        url 'https://jitpack.io/
+    }
+}
+
+dependencies {
+    implementation 'com.github.MJaroslav:Shared-Java:1.+'
+}
+```
+
+### Documentation
+
+All built releases/snapshots has javadoc page by [JitPack](https://jitpack.io).
+
+For example link to latest version: https://jitpack.io/com/github/MJaroslav/Shared-Java/latest/javadoc/
+
+## Building
+
+### Requirements
+
+- JDK 8 (as default) and JDK 16 in Gradle java toolchains.
+
+Just clone repository, checkout to this branch and run `./gradlew build`.
+
+## See also
+
+- [CHANGELOG.md](CHANGELOG.md)
+- [TODO.md](TODO.md)
+
+## Post Scriptum
+
+Feel free to correct typos and errors in the text or code :)
