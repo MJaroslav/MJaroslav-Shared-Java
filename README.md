@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.MJaroslav:Shared-Java:1.+'
+    implementation 'com.github.MJaroslav:Shared-Java:v1.+'
 }
 ```
 
