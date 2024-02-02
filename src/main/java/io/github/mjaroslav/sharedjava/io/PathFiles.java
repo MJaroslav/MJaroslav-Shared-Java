@@ -23,7 +23,7 @@ import java.util.stream.Stream;
  * Set of wrappers for getting and using {@link Path} as "path/filename/file" parameters in other places.
  *
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @UtilityClass
 public class PathFiles {
@@ -37,7 +37,7 @@ public class PathFiles {
      * null if type of first parameter not supported in {@link PathFiles#normalizePath(Object)}
      * @see Paths#get(String, String...)
      * @see PathFiles#normalizePath(Object)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public Path get(@NotNull Object parent, @NotNull String @NotNull ... children) {
         var result = normalizePath(parent);
@@ -51,7 +51,7 @@ public class PathFiles {
      *
      * @param path file of interest
      * @return file name without extension; file name if file without extension
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull String removeExtension(@NotNull Path path) {
         val name = path.toAbsolutePath().normalize().getFileName().toString();
@@ -65,7 +65,7 @@ public class PathFiles {
      * @param path         file for extension replacing.
      * @param newExtension new file extension.
      * @return old extension; null otherwise.
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @Nullable String replaceExtension(@NotNull Path path, @NotNull String newExtension) {
         val ext = getExtension(path);
@@ -80,7 +80,7 @@ public class PathFiles {
      * @param path the path to the directory
      * @return the Stream describing the content of the directory; empty Stream on IOException
      * @see Files#list(Path)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Stream<Path> list(@NotNull Path path) {
         try {
@@ -95,7 +95,7 @@ public class PathFiles {
      *
      * @param path file with the extension of interest
      * @return file extension or empty string of file is dot file or without extension
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull String getExtension(@NotNull Path path) {
         val name = path.toAbsolutePath().normalize().getFileName().toString();
@@ -109,7 +109,7 @@ public class PathFiles {
      * @param path       file for extension check.
      * @param extensions array of required extensions
      * @return true if file extension one of specified extensions with case ignoring; false otherwise
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @Contract("null, _ -> false")
     public boolean isExtension(@Nullable Path path, @NotNull String @NotNull ... extensions) {
@@ -128,7 +128,7 @@ public class PathFiles {
      * @return normalized absolute {@link Path} of supported parameter; null otherwise
      * @see Path#normalize()
      * @see Path#toAbsolutePath()
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @Contract("null -> null")
     public @UnknownNullability Path normalizePath(@Nullable Object source) {
@@ -162,7 +162,7 @@ public class PathFiles {
      * @return the path to the target file or null on IOException
      * @see PathFiles#move(Path, Path, CopyOption...)
      * @see Files#move(Path, Path, CopyOption...)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @Contract("null, _, _ -> null; _, null, _ -> null")
     public @Nullable Path move(@Nullable Object from, @Nullable Object to, @NotNull CopyOption @NotNull ... options) {
@@ -177,7 +177,7 @@ public class PathFiles {
      * @param options options specifying how the move should be done
      * @return the path to the target file or null on IOException
      * @see Files#move(Path, Path, CopyOption...)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @Contract("null, _, _ -> null; _, null, _ -> null")
     public @Nullable Path move(@Nullable Path from, @Nullable Path to, @NotNull CopyOption @NotNull ... options) {
@@ -198,7 +198,7 @@ public class PathFiles {
      * @return the directory or null on IOException
      * @see PathFiles#createDirectories(Path, FileAttribute[])
      * @see Files#createDirectories(Path, FileAttribute[])
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @Nullable Path createDirectories(@Nullable Object path, @NotNull FileAttribute<?> @NotNull ... attrs) {
         return createDirectories(normalizePath(path), attrs);
@@ -211,7 +211,7 @@ public class PathFiles {
      * @param attrs an optional list of file attributes to set atomically when creating the directory
      * @return the directory or null on IOException
      * @see Files#createDirectories(Path, FileAttribute[])
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @Nullable Path createDirectories(@Nullable Path path, @NotNull FileAttribute<?> @NotNull ... attrs) {
         if (path != null)

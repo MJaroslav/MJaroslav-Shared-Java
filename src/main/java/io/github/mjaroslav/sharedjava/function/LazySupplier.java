@@ -16,33 +16,33 @@ import java.util.stream.Stream;
  * @param <T> type of lazy value for get method
  * @author MJaroslav
  * @see Supplier
- * @since 0.1.0
+ * @since 1.0.0
  */
 @RequiredArgsConstructor
 public class LazySupplier<T> implements Supplier<T> {
     /**
      * Functional interface for value initialize.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @NotNull Supplier<T> initializer;
     /**
      * True if value already initialized.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Getter boolean initialized;
     /**
      * Holder for value.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable T value;
 
     /**
      * Initialize value by initializer function. This method checks for multiple tries of initialize.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public void initialize() {
         if (!isInitialized()) {
@@ -55,7 +55,7 @@ public class LazySupplier<T> implements Supplier<T> {
      * Initialize value and return it.
      *
      * @return nullable initialized value
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @Nullable T get() {
         initialize();
@@ -66,7 +66,7 @@ public class LazySupplier<T> implements Supplier<T> {
      * Initialize value and check for is not null.
      *
      * @return true if initialized value is not null
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public boolean isPresent() {
         initialize();
@@ -77,7 +77,7 @@ public class LazySupplier<T> implements Supplier<T> {
      * Initialize value and check for is null.
      *
      * @return true if initialized value is null
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public boolean isEmpty() {
         initialize();
@@ -88,7 +88,7 @@ public class LazySupplier<T> implements Supplier<T> {
      * Initialize value and run action if it is not null.
      *
      * @param action action for executing
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public void ifPresent(@NotNull Consumer<T> action) {
         initialize();
@@ -100,7 +100,7 @@ public class LazySupplier<T> implements Supplier<T> {
      *
      * @param action      action that will be run if initialized value is not null
      * @param emptyAction action that will be run if initialized value is null
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public void ifPresentOrElse(@NotNull Consumer<T> action, @NotNull Runnable emptyAction) {
         initialize();
@@ -113,7 +113,7 @@ public class LazySupplier<T> implements Supplier<T> {
      *
      * @param other value that will be return if initialized is null
      * @return initialized non-null or other value
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull T orElse(@NotNull T other) {
         initialize();
@@ -125,7 +125,7 @@ public class LazySupplier<T> implements Supplier<T> {
      *
      * @param supplier getter for value that will be used if initialized is null
      * @return initialized non-null or getter other value
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public T orElseGet(@NotNull Supplier<T> supplier) {
         initialize();
@@ -137,7 +137,7 @@ public class LazySupplier<T> implements Supplier<T> {
      *
      * @return initialized value
      * @throws NoSuchElementException if initialized value is null
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull T orElseThrow() {
         initialize();
@@ -152,7 +152,7 @@ public class LazySupplier<T> implements Supplier<T> {
      * @param <X>               type of throwable
      * @return initialized value
      * @throws X if initialized value is null
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public <X extends Throwable> @NotNull T orElseThrow(@NotNull Supplier<? extends X> exceptionSupplier) throws X {
         initialize();
@@ -164,7 +164,7 @@ public class LazySupplier<T> implements Supplier<T> {
      * Initialize value and create stream from it.
      *
      * @return stream with initialized value or empty if it is null
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Stream<T> stream() {
         initialize();

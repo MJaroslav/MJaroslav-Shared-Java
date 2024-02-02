@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * Null values will be replaced with (byte) 0.
  *
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 public class BUnit extends SimpleUnit<Byte> {
     public BUnit() {

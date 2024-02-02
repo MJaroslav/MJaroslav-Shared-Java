@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * @author MJaroslav
  * @see DelegatingUnit
  * @see DelegatingSet
- * @since 0.1.0
+ * @since 1.0.0
  */
 @RequiredArgsConstructor
 @Getter
@@ -32,19 +32,19 @@ public class DelegatingMap<K, V> extends AbstractMap<K, V> {
     /**
      * Delegating function for equals, required.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @NotNull BiPredicate<Unit<K>, Unit<?>> equalsFunc;
     /**
      * Delegating function for hashCode, required.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @NotNull ToIntFunction<Unit<K>> hashCodeFunc;
     /**
      * Delegating function for toString; Will use default behavior if null.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @Nullable Function<Unit<K>, String> toStringFunc;
     @Getter(AccessLevel.NONE)

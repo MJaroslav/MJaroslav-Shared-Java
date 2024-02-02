@@ -19,20 +19,20 @@ import java.util.function.ToIntFunction;
  * @param <X> type of x (first) value
  * @param <Y> type of y (second) value
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @NoArgsConstructor
 public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
     /**
      * x (first) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected X x;
     /**
      * y (second) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected Y y;
 
@@ -40,21 +40,21 @@ public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
      * Delegating function for toString; Will use default behavior if null.
      * Use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable Function<Pair<X, Y>, String> toStringFunc;
     /**
      * Delegating function for hashCode; Will use default behavior if null.
      * Use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable ToIntFunction<Pair<X, Y>> hashCodeFunc;
     /**
      * Delegating function for equals; Will use default behavior if null.
      * Use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable BiPredicate<Pair<X, Y>, Object> equalsFunc;
 
@@ -67,7 +67,7 @@ public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
      *
      * @param toStringFunc function for toString delegating; use null for default behavior
      * @return this Unit object
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
@@ -81,7 +81,7 @@ public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
      *
      * @param hashCodeFunc function for hashCode delegating; use null for default behavior
      * @return this Unit object
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
@@ -95,7 +95,7 @@ public @Data class DelegatingPair<X, Y> implements Pair<X, Y> {
      *
      * @param equalsFunc function for equals delegating; use null for default behavior
      * @return this Unit object
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")

@@ -15,26 +15,26 @@ import java.util.Objects;
  * @param <Y> type of y (second) value
  * @param <Z> type of z (third) value
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @NoArgsConstructor
 public @Data class SimpleTriplet<X, Y, Z> implements Triplet<X, Y, Z> {
     /**
      * x (first) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected X x;
     /**
      * y (second) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected Y y;
     /**
      * z (third) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected Z z;
 

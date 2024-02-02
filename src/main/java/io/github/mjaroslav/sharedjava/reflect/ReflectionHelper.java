@@ -16,7 +16,7 @@ import java.util.Map;
  * Utility class with some hacky methods for reflection.
  *
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @UtilityClass
 public class ReflectionHelper {
@@ -28,7 +28,7 @@ public class ReflectionHelper {
      * @param fallbackEnum default value if specified enum can't be taken
      * @param <T>          enum type
      * @return enum with specified name; fallback value when specified can't be taken
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("unchecked")
     @Contract("null, _, _ -> param3; _, null, _ -> param3")
@@ -51,7 +51,7 @@ public class ReflectionHelper {
      * @return enum with specified name
      * @throws IllegalArgumentException if the specified enum class has no constant with the specified name,
      *                                  or the specified class object does not represent an enum class
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("unchecked")
     public <T extends Enum<T>> @NotNull T getEnumFromName(@NotNull Class<?> enumClass, @NotNull String enumName) {
@@ -63,7 +63,7 @@ public class ReflectionHelper {
      *
      * @param source Class, String or Object for getting name
      * @return simple class name of source
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull String getSimpleClassName(@NotNull Object source) {
         val className = source instanceof String string ? string :
@@ -77,7 +77,7 @@ public class ReflectionHelper {
      *
      * @param source Class, String or Object or package getting.
      * @return package of source, empty string for default package.
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull String getPackage(@NotNull Object source) {
         val name = source instanceof String string ? string :
@@ -96,7 +96,7 @@ public class ReflectionHelper {
      * @param fieldNames field name with synonyms (if you have obfuscated environment)
      * @return field of class or superclasses with specified name
      * @throws UnableToFindFieldException if no field with specified name found
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Field findDeepField(@NotNull Class<?> target, @Nullable Class<?> deepLimit,
                                         @NotNull String @NotNull ... fieldNames) throws UnableToFindFieldException {
@@ -121,7 +121,7 @@ public class ReflectionHelper {
      * @param target    class for getting fields
      * @param deepLimit deep limit of superclasses (exclusive), use null for get all fields up to Object.
      * @return new HashMap with fields of class and superclasses
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @Contract("_, _ -> new")
     public @NotNull Map<String, Field> getDeepDeclaredFields(@NotNull Class<?> target, @Nullable Class<?> deepLimit) {
@@ -145,7 +145,7 @@ public class ReflectionHelper {
      * @param <E>        type of specified class, just for instance
      * @return private value of specified field of class or superclasses
      * @throws UnableToAccessFieldException if field with specified name can't be found
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("unchecked")
     public <T, E> T getDeepPrivateValue(@NotNull Class<? super E> target, @Nullable E instance,
@@ -169,7 +169,7 @@ public class ReflectionHelper {
      * @param fieldNames field name with synonyms (if you use obfuscated environment)
      * @param <T>        type of specified class, just for instance
      * @throws UnableToAccessFieldException if field with specified name can't be found
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public <T> void setDeepPrivateValue(@NotNull Class<? super T> target, @Nullable T instance,
                                         @Nullable Object value, @Nullable Class<?> deepLimit,
@@ -189,7 +189,7 @@ public class ReflectionHelper {
      * @param index  index of generic type
      * @return generic type class
      * @throws UnableToFindGenericTypeException if no generics with specified index or can't get generics at all
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Class<?> getGenericType(@NotNull Class<?> target, @Range(from = 0, to = Integer.MAX_VALUE) int index) {
         try {

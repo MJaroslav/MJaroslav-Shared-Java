@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * Null values will be replaced with 0.
  *
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 public class ITriplet extends SimpleTriplet<Integer, Integer, Integer> {
     public ITriplet() {

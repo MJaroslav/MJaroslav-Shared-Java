@@ -12,7 +12,7 @@ import static io.github.mjaroslav.sharedjava.format.ColorFormat.*;
  * Utilities for transferring between different color formats (arrays and packed integers).
  *
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @UtilityClass
 public class Colors {
@@ -21,7 +21,7 @@ public class Colors {
      *
      * @param packedColor color for unpacking
      * @return int array of unpacked color in {@link ColorFormat#ARGB ARGB} (all channels in 0..255 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int @NotNull [] unpackColorIntToIntArray(int packedColor) {
         return unpackColorIntToIntArray(packedColor, ARGB, ARGB);
@@ -33,7 +33,7 @@ public class Colors {
      * @param packedColor color for unpacking
      * @param inFormat    format of int packed color
      * @return int array of unpacked color in {@link ColorFormat#ARGB ARGB} (all channels in 0..255 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int @NotNull [] unpackColorIntToIntArray(int packedColor, @NotNull ColorFormat inFormat) {
         return unpackColorIntToIntArray(packedColor, inFormat, ARGB);
@@ -46,7 +46,7 @@ public class Colors {
      * @param inFormat    format of int packed color
      * @param outFormat   format for result unpacked color array
      * @return int array of unpacked color in outFormat (all channels in 0..255 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int @NotNull [] unpackColorIntToIntArray(int packedColor, @NotNull ColorFormat inFormat,
                                                     @NotNull ColorFormat outFormat) {
@@ -64,7 +64,7 @@ public class Colors {
      *
      * @param packedColor color for unpacking
      * @return double array of unpacked color in {@link ColorFormat#ARGB ARGB} (all channels in 0..1 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public double @NotNull [] unpackColorIntToDoubleArray(int packedColor) {
         return unpackColorIntToDoubleArray(packedColor, ARGB, ARGB);
@@ -76,7 +76,7 @@ public class Colors {
      * @param packedColor color for unpacking
      * @param inFormat    format of int packed color
      * @return double array of unpacked color in {@link ColorFormat#ARGB ARGB} (all channels in 0..1 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public double @NotNull [] unpackColorIntToDoubleArray(int packedColor, @NotNull ColorFormat inFormat) {
         return unpackColorIntToDoubleArray(packedColor, inFormat, ARGB);
@@ -89,7 +89,7 @@ public class Colors {
      * @param inFormat    format of int packed color
      * @param outFormat   format for result unpacked color array
      * @return double array of unpacked color in outFormat (all channels in 0..1 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public double @NotNull [] unpackColorIntToDoubleArray(int packedColor, @NotNull ColorFormat inFormat,
                                                           @NotNull ColorFormat outFormat) {
@@ -102,7 +102,7 @@ public class Colors {
      *
      * @param packedColor color for unpacking
      * @return float array of unpacked color in {@link ColorFormat#ARGB ARGB} (all channels in 0..1 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public float @NotNull [] unpackColorIntToFloatArray(int packedColor) {
         return unpackColorIntToFloatArray(packedColor, ARGB, ARGB);
@@ -114,7 +114,7 @@ public class Colors {
      * @param packedColor color for unpacking
      * @param inFormat    format of int packed color
      * @return float array of unpacked color in {@link ColorFormat#ARGB ARGB} (all channels in 0..1 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public float @NotNull [] unpackColorIntToFloatArray(int packedColor, @NotNull ColorFormat inFormat) {
         return unpackColorIntToFloatArray(packedColor, inFormat, ARGB);
@@ -127,7 +127,7 @@ public class Colors {
      * @param inFormat    format of int packed color
      * @param outFormat   format for result unpacked color array
      * @return float array of unpacked color in outFormat (all channels in 0..1 range)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public float @NotNull [] unpackColorIntToFloatArray(int packedColor, @NotNull ColorFormat inFormat,
                                                         @NotNull ColorFormat outFormat) {
@@ -147,7 +147,7 @@ public class Colors {
      * @param b blue color channel
      * @return packed color integer
      * @see Colors#packToColorInt(float, float, float, float, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(float a, float r, float g, float b) {
         return packToColorInt((double) a, r, g, b, ARGB);
@@ -162,7 +162,7 @@ public class Colors {
      * @param b         blue color channel
      * @param outFormat out color format
      * @return packed color integer
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(float a, float r, float g, float b, @NotNull ColorFormat outFormat) {
         if (!outFormat.hasAlpha) a = 0;
@@ -182,7 +182,7 @@ public class Colors {
      * @param b blue color channel
      * @return packed color integer
      * @see Colors#packToColorInt(double, double, double, double, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(double a, double r, double g, double b) {
         return packToColorInt(a, r, g, b, ARGB);
@@ -197,7 +197,7 @@ public class Colors {
      * @param b         blue color channel
      * @param outFormat out color format
      * @return packed color integer
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(double a, double r, double g, double b, @NotNull ColorFormat outFormat) {
         if (!outFormat.hasAlpha) a = 0;
@@ -217,7 +217,7 @@ public class Colors {
      * @param b blue color channel
      * @return packed color integer
      * @see Colors#packToColorInt(int, int, int, int, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(int a, int r, int g, int b) {
         return packToColorInt(a, r, g, b, ARGB);
@@ -232,7 +232,7 @@ public class Colors {
      * @param b         blue color channel
      * @param outFormat out color format
      * @return packed color integer
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(int a, int r, int g, int b, @NotNull ColorFormat outFormat) {
         if (!outFormat.hasAlpha) a = 0;
@@ -250,7 +250,7 @@ public class Colors {
      * @param inFormat  array color format
      * @param outFormat out color format
      * @return packed color integer
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(int @NotNull [] unpacked, @NotNull ColorFormat inFormat, @NotNull ColorFormat outFormat) {
         if (inFormat.hasAlpha ? unpacked.length != 4 : (unpacked.length != 4 && unpacked.length != 3))
@@ -269,7 +269,7 @@ public class Colors {
      * @param inFormat array color format
      * @return packed color integer
      * @see Colors#packToColorInt(int[], ColorFormat, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(int @NotNull [] unpacked, @NotNull ColorFormat inFormat) {
         return packToColorInt(unpacked, inFormat, ARGB);
@@ -281,7 +281,7 @@ public class Colors {
      * @param unpacked array with color channels, must contain 4 elements for alpha formats else can be 3
      * @return packed color integer
      * @see Colors#packToColorInt(int[], ColorFormat, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(int @NotNull [] unpacked) {
         return packToColorInt(unpacked, ARGB, ARGB);
@@ -294,7 +294,7 @@ public class Colors {
      * @param inFormat  array color format
      * @param outFormat out color format
      * @return packed color integer
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(float @NotNull [] unpacked, @NotNull ColorFormat inFormat, @NotNull ColorFormat outFormat) {
         if (inFormat.hasAlpha ? unpacked.length != 4 : (unpacked.length != 4 && unpacked.length != 3))
@@ -313,7 +313,7 @@ public class Colors {
      * @param inFormat array color format
      * @return packed color integer
      * @see Colors#packToColorInt(int[], ColorFormat, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(float @NotNull [] unpacked, @NotNull ColorFormat inFormat) {
         return packToColorInt(unpacked, inFormat, ARGB);
@@ -325,7 +325,7 @@ public class Colors {
      * @param unpacked array with color channels, must contain 4 elements for alpha formats else can be 3
      * @return packed color integer
      * @see Colors#packToColorInt(int[], ColorFormat, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(float @NotNull [] unpacked) {
         return packToColorInt(unpacked, ARGB, ARGB);
@@ -338,7 +338,7 @@ public class Colors {
      * @param inFormat  array color format
      * @param outFormat out color format
      * @return packed color integer
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(double @NotNull [] unpacked, @NotNull ColorFormat inFormat, @NotNull ColorFormat outFormat) {
         if (inFormat.hasAlpha ? unpacked.length != 4 : (unpacked.length != 4 && unpacked.length != 3))
@@ -357,7 +357,7 @@ public class Colors {
      * @param inFormat array color format
      * @return packed color integer
      * @see Colors#packToColorInt(int[], ColorFormat, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(double @NotNull [] unpacked, @NotNull ColorFormat inFormat) {
         return packToColorInt(unpacked, inFormat, ARGB);
@@ -369,7 +369,7 @@ public class Colors {
      * @param unpacked array with color channels, must contain 4 elements for alpha formats else can be 3
      * @return packed color integer
      * @see Colors#packToColorInt(int[], ColorFormat, ColorFormat)
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public int packToColorInt(double @NotNull [] unpacked) {
         return packToColorInt(unpacked, ARGB, ARGB);

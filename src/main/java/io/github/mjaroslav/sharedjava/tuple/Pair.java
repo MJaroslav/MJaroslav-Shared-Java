@@ -16,14 +16,14 @@ import io.github.mjaroslav.sharedjava.tuple.pair.*;
  * @see IPair
  * @see LPair
  * @see SPair
- * @since 0.1.0
+ * @since 1.0.0
  */
 public interface Pair<X, Y> extends Unit<X> {
     /**
      * Get y (second) value.
      *
      * @return value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     Y getY();
 
@@ -31,7 +31,7 @@ public interface Pair<X, Y> extends Unit<X> {
      * Set y (second) value.
      *
      * @param y value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     void setY(Y y);
 
@@ -40,7 +40,7 @@ public interface Pair<X, Y> extends Unit<X> {
      *
      * @param x first value; nullability depends on implementation
      * @param y second value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     default void set(X x, Y y) {
         setX(x);

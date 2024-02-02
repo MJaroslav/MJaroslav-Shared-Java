@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * @author MJaroslav
  * @see DelegatingUnit
  * @see DelegatingMap
- * @since 0.1.0
+ * @since 1.0.0
  */
 @RequiredArgsConstructor
 @Getter
@@ -31,19 +31,19 @@ public class DelegatingSet<T> extends AbstractSet<T> {
     /**
      * Delegating function for equals, required.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @NotNull BiPredicate<Unit<T>, Unit<?>> equalsFunc;
     /**
      * Delegating function for hashCode, required.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @NotNull ToIntFunction<Unit<T>> hashCodeFunc;
     /**
      * Delegating function for toString; Will use default behavior if null.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected final @Nullable Function<Unit<T>, String> toStringFunc;
     @Getter(AccessLevel.NONE)

@@ -16,14 +16,14 @@ import io.github.mjaroslav.sharedjava.tuple.unit.*;
  * @see IUnit
  * @see LUnit
  * @see SUnit
- * @since 0.1.0
+ * @since 1.0.0
  */
 public interface Unit<X> {
     /**
      * Get x (first) value.
      *
      * @return value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     X getX();
 
@@ -31,7 +31,7 @@ public interface Unit<X> {
      * Set x (first) value.
      *
      * @param x value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     void setX(X x);
 }

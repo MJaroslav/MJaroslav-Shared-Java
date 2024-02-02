@@ -14,7 +14,7 @@ import java.util.Objects;
  *
  * @param <X> type of x (first) value
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +22,7 @@ public @Data class SimpleUnit<X> implements Unit<X> {
     /**
      * x (first) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected X x;
 

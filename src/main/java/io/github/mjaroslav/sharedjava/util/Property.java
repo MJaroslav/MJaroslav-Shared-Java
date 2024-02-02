@@ -18,7 +18,7 @@ import java.util.function.Consumer;
  *
  * @param <T> type of Property
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @SuppressWarnings("UnusedReturnValue") // Builder-like calling of methods
 @NoArgsConstructor
@@ -45,7 +45,7 @@ public class Property<T> {
      * Gets value with conventions.
      *
      * @return property convention value, own value if property convention is null and convention value otherwise
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public T get() {
         return conventionProperty != null ? conventionProperty.get() : value != null ? value : convention;
@@ -56,7 +56,7 @@ public class Property<T> {
      *
      * @param newValue next value of Property
      * @return this Property
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Property<T> set(@NotNull T newValue) {
         SHARED.accept(() -> value = newValue);
@@ -68,7 +68,7 @@ public class Property<T> {
      *
      * @param convention Property convention value
      * @return this Property
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Property<T> setConvention(@Nullable T convention) {
         SHARED.accept(() -> this.convention = convention);
@@ -80,7 +80,7 @@ public class Property<T> {
      *
      * @param conventionProperty Property convention property; use null for use convention or property own value
      * @return this Property
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Property<T> setConventionProperty(@Nullable Property<T> conventionProperty) {
         SHARED.accept(() -> {
@@ -96,7 +96,7 @@ public class Property<T> {
      *
      * @param listener Consumer with new value as parameter
      * @return this Property
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Property<T> registerListener(@NotNull Consumer<T> listener) {
         listeners.add(listener);
@@ -109,7 +109,7 @@ public class Property<T> {
      *
      * @param listener already registered in this Property Consumer
      * @return this Property
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public @NotNull Property<T> unregisterListener(@NotNull Consumer<T> listener) {
         listeners.remove(listener);

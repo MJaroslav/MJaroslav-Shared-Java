@@ -15,14 +15,14 @@ import io.github.mjaroslav.sharedjava.tuple.triplet.*;
  * @see ITriplet
  * @see LTriplet
  * @see STriplet
- * @since 0.1.0
+ * @since 1.0.0
  */
 public interface Triplet<X, Y, Z> extends Pair<X, Y> {
     /**
      * Get z (third) value.
      *
      * @return value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     Z getZ();
 
@@ -30,7 +30,7 @@ public interface Triplet<X, Y, Z> extends Pair<X, Y> {
      * Set z (third) value.
      *
      * @param z value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     void setZ(Z z);
 
@@ -40,7 +40,7 @@ public interface Triplet<X, Y, Z> extends Pair<X, Y> {
      * @param x first value; nullability depends on implementation
      * @param y second value; nullability depends on implementation
      * @param z third value; nullability depends on implementation
-     * @since 0.1.0
+     * @since 1.0.0
      */
     default void set(X x, Y y, Z z) {
         setX(x);

@@ -14,20 +14,20 @@ import java.util.Objects;
  * @param <X> type of x (first) value
  * @param <Y> type of y (second) value
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @NoArgsConstructor
 public @Data class SimplePair<X, Y> implements Pair<X, Y> {
     /**
      * x (first) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected X x;
     /**
      * y (second) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected Y y;
 

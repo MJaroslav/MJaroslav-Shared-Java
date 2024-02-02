@@ -18,14 +18,14 @@ import java.util.function.ToIntFunction;
  *
  * @param <X> type of x (first) value
  * @author MJaroslav
- * @since 0.1.0
+ * @since 1.0.0
  */
 @NoArgsConstructor
 public @Data class DelegatingUnit<X> implements Unit<X> {
     /**
      * x (first) value, use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected X x;
 
@@ -33,21 +33,21 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
      * Delegating function for toString; Will use default behavior if null.
      * Use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable Function<Unit<X>, String> toStringFunc;
     /**
      * Delegating function for hashCode; Will use default behavior if null.
      * Use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable ToIntFunction<Unit<X>> hashCodeFunc;
     /**
      * Delegating function for equals; Will use default behavior if null.
      * Use setter and getter for it.
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected @Nullable BiPredicate<Unit<X>, Object> equalsFunc;
 
@@ -60,7 +60,7 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
      *
      * @param toStringFunc function for toString delegating; use null for default behavior
      * @return this Unit object
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
@@ -74,7 +74,7 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
      *
      * @param hashCodeFunc function for hashCode delegating; use null for default behavior
      * @return this Unit object
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
@@ -88,7 +88,7 @@ public @Data class DelegatingUnit<X> implements Unit<X> {
      *
      * @param equalsFunc function for equals delegating; use null for default behavior
      * @return this Unit object
-     * @since 0.1.0
+     * @since 1.0.0
      */
     @SuppressWarnings("UnusedReturnValue")
     @Contract("_ -> this")
