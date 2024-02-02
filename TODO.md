@@ -14,5 +14,5 @@ It's reminder for planned things of project.
 - [X] Fully cover tuples by tests.
 - [X] Write javadoc for tuples.
 - [X] Write javadoc for ReflectionHelper.
-- [ ] Write javadoc for Delegating Collections.
-- [ ] Write javadoc for Property
+- [X] Write javadoc for Delegating Collections.
+- [X] Write javadoc for Property

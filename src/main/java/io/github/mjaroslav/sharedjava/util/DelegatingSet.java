@@ -10,20 +10,41 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.AbstractSet;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
+/**
+ * Special realization of {@link Set} that allows delegate equals, hashCode and toString.
+ *
+ * @param <T> type of Set elements
+ * @author MJaroslav
+ * @see DelegatingUnit
+ * @see DelegatingMap
+ * @since 0.1.0
+ */
 @RequiredArgsConstructor
 @Getter
 public class DelegatingSet<T> extends AbstractSet<T> {
+    /**
+     * Delegating function for equals, required.
+     *
+     * @since 0.1.0
+     */
     protected final @NotNull BiPredicate<Unit<T>, Unit<?>> equalsFunc;
+    /**
+     * Delegating function for hashCode, required.
+     *
+     * @since 0.1.0
+     */
     protected final @NotNull ToIntFunction<Unit<T>> hashCodeFunc;
+    /**
+     * Delegating function for toString; Will use default behavior if null.
+     *
+     * @since 0.1.0
+     */
     protected final @Nullable Function<Unit<T>, String> toStringFunc;
     @Getter(AccessLevel.NONE)
     protected final @NotNull HashSet<DelegatingUnit<T>> impl = new HashSet<>();
