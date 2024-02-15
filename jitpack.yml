@@ -1,4 +1,6 @@
 before_install:
+  - sed -i 's/sdkman_insecure_ssl=false/sdkman_insecure_ssl=true/g' $SDKMAN_LIB/etc/config
+  - grep -qxF 'sdkman_insecure_ssl=true' $SDKMAN_DIR/etc/config || echo 'sdkman_insecure_ssl=true' >> $SDKMAN_DIR/etc/config
   - sdk install java 16.0.2.fx-zulu
   - sdk install java 8.0.345.fx-zulu
   - sdk use java 8.0.345.fx-zulu
