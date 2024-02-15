@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2024-02-15
+
+### Fixed
+
+- JitPack build by version tag witout 'v' (try 1).
+
 ## [1.0.0] - 2024-02-02
 
 ### Added
@@ -36,5 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   hashCode.
 - [Property](src/main/java/io/github/mjaroslav/sharedjava/util/Property.java) JFX-like Property.
 
-[unreleased]: https://github.com/MJaroslav/Shared-Java/compare/v1.3.0...HEAD
-[1.0.0]: https://github.com/MJaroslav/Shared-Java/releases/tag/1.0.0
+[unreleased]: https://github.com/MJaroslav/Shared-Java/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/MJaroslav/Shared-Java/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/MJaroslav/Shared-Java/releases/tag/v1.0.0
